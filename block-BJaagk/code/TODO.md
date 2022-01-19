@@ -6,6 +6,19 @@ function percentage(marks, total) {
 }
 
 // Your code goes here
+
+let percentage_marks = function percentage(marks, total) {
+  return (marks * 100) / total;
+}
+
+let percentage_marks = function (marks, total) {
+  return (marks * 100) / total;
+}
+
+let percentage_marks = (marks, total) => {
+  return (marks * 100) / total;
+}
+
 ```
 
 2. Write Function Declaration or Function Expression next to the function.
@@ -15,6 +28,11 @@ function percentage(marks, total) {
   return (marks * 100) / total;
 }
 // Your answer
+
+let percentage = function (marks, total) {
+  return (marks * 100) / total;
+}
+
 ```
 
 ```js
