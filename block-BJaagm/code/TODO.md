@@ -48,7 +48,7 @@ var userMsg = sayHello(user);
 
 <!-- Put your image here -->
 
-![](./img/executionThread_diagram1.jpg)
+![](./code/Snippets.executionThread_diagram1.png)
 
 
 
