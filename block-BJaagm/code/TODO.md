@@ -66,7 +66,7 @@ var percentageProfit = getPercentage(400, 200);
 
 <!-- Put your image here -->
 
-![](./img/executionThread_diagram2.jpg)
+![](./Snippets/executionThread_diagram2.png)
 
 
 
@@ -87,4 +87,4 @@ var whoAmIAgain = customeMessage(12);
 
 <!-- Put your image here -->
 
-![](./img/executionThread_diagram13.jpg)
+![](./Snippets/executionThread_diagram3.png)
