@@ -19,7 +19,7 @@ console.log(species); // 2
 
 <!-- Put your image below -->
 
-![](./snippet1.png)
+![](./snippets/snippet1.png)
 
 - Create the execution context diagram
 - What will be the value of species on 1 and 2
