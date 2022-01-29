@@ -22,6 +22,8 @@ The above code will throw an error `Reference Error username is not defined`.
 console.log(useranme); // output
 ```
 
+Before going to the declaration inside the scope, interpreter will first execute the code outside the scope which console log username. Therefore the output will throw an error for undefined.
+
 3. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
 ```js
@@ -30,6 +32,8 @@ if (true) {
 }
 console.log(useranme); // output
 ```
+Since, username is declared inside a scope the console log will throw an error of undefined.
+
 
 4. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -39,6 +43,7 @@ if (true) {
 }
 console.log(useranme); // output
 ```
+Again, it will throw an error because the variable is inside a scope.
 
 5. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -49,6 +54,7 @@ if (true) {
 }
 console.log(useranme); // output
 ```
+Same variable name cannot be used twice therfore it will throw an error of already declared.
 
 6. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -59,6 +65,7 @@ if (true) {
 }
 console.log(useranme); // output
 ```
+Same variable name cannot be used twice therfore it will throw an error of already declared.
 
 7. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -70,6 +77,7 @@ function sayHello() {
 sayHello();
 console.log(useranme); // output
 ```
+Same variable name cannot be used twice therfore it will throw an error of already declared.
 
 8. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
