@@ -14,7 +14,7 @@ function square(num) {
 let hundred = square(10);
 console.log(hundred);
 ```
-![image](../snip1.png)
+![](./snip1.png)
 
 Create the execution context diagram of the following code line by line.
 
