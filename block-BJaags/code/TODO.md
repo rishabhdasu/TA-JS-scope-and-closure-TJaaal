@@ -28,6 +28,9 @@ var ten = addFive(5);
 console.log(five, ten);
 ```
 
+![](./snip2.png)
+
+
 Create the execution context diagram of the following code line by line.
 
 ```js
@@ -43,6 +46,8 @@ function multiplyArrayByN(arr, n) {
 let numbers = multiplyArrayByN(marks);
 ```
 
+![](./snip3.png)
+
 Create the execution context diagram of the following code line by line.
 
 ```js
@@ -55,6 +60,7 @@ function counter(){
   return increment()
 }
 ```
+![](./snip4.png)
 
 Create the execution context diagram of the following code line by line.
 
@@ -68,3 +74,6 @@ let counter = function () {
   return increment();
 };
 ```
+
+![](./snip5.png)
+
