@@ -1,6 +1,46 @@
 1. Create a function by your choice that accepts a callback function.
 
+```js
+let marks = [34, 45, 56, 76];
+function multiplyArrayByN(arr, cb) {
+  let finalArr = [];
+  for (let elm of arr) {
+    finalArr.push(cb(elm));
+  }
+  return finalArr;
+}
+function addFive(n) {
+  return n + 5;
+}
+function multiplyBy5(n) {
+  return n * 5;
+}
+let numbersAddedFive = multiplyArrayByN(marks, addFive);
+let numbersMultipliedBy5 = multiplyArrayByN(marks, multiplyBy5); 
+}
+```
+
 2. Create a function by you choice that returns a function reference.
+
+```js
+let marks = [34, 45, 56, 76];
+function multiplyArrayByN(arr, cb) {
+  let finalArr = [];
+  for (let elm of arr) {
+    finalArr.push(cb(elm));
+  }
+  return finalArr;
+}
+function addFive(n) {
+  return n + 5;
+}
+function multiplyBy5(n) {
+  return n * 5;
+}
+let numbersAddedFive = multiplyArrayByN(marks, addFive);
+let numbersMultipliedBy5 = multiplyArrayByN(marks, multiplyBy5); 
+}
+```
 
 3. Create a higher order function called `map` that takes two inputs:
    - An array of numbers/string/boolean etc
