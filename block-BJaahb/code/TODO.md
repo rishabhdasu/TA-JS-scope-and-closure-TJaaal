@@ -12,6 +12,7 @@ function outer() {
 let getSum = outer();
 let num = getSum();
 ```
+![](./snip7.png)
 
 2.
 
