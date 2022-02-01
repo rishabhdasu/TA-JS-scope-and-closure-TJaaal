@@ -19,12 +19,11 @@ forEach(['Sam', 'Jon', 'Arya'], (name, i, arr) =>
 - It should work exactly like array `map` method
 
 ```js
-function map(arr) {
-  let final = [];
-  arr.reduce((name) => {
-  final.push(name + name);
-})
-return final;
+function map(arr, cb) {
+  return arr.reduce((acc, cv, i, arr) => {
+  acc.push(cb(cv, i, arr));
+  return acc
+},[])
 }
 
 map(['Sam', 'Jon', 'Arya'], (name) => name + name); // ['SamSam', 'JonJon', 'AryaArya']
