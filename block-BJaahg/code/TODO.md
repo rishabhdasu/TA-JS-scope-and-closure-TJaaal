@@ -10,9 +10,9 @@ const lastName = 'Stark';
 var knownAs = 'no one';
 
 console.log(
-  window.firstName,
-  window.lastName,
-  window.knownAs
+  window.firstName, // undefined
+  window.lastName, // undefined
+  window.knownAs // no one
 );
 ```
 
@@ -27,7 +27,7 @@ function fullName(a, b) {
   return a + b;
 }
 
-console.log(window.fullName(firstName, lastName));
+console.log(window.fullName(firstName, lastName)); // AryaStark
 ```
 
 3. Make a Execution Context Diagram for the following JS and write the output.
@@ -38,8 +38,9 @@ fucntion addOne(num){
 }
 var one = addOne(0);
 var two = addOne(1);
-console.log(one, two);
+console.log(one, two); // 1 2
 ```
+![](./snip9.png)
 
 4. Make a Execution Context Diagram for the following JS and write the output.
 
@@ -52,16 +53,21 @@ var two = addOne(1);
 console.log(one, two);
 ```
 
+![](./snip10.png)
+
+
 5. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
-console.log(addOne(0));
+console.log(addOne(0)); // 1
 fucntion addOne(num){
   return num + 1;
 }
-var two = addOne(1);
-console.log(two);
+var two = addOne(1); 
+console.log(two); // 2
 ```
+![](./snip11.png)
+
 
 6. Make a Execution Context Diagram for the following JS and write the output.
 
@@ -73,6 +79,10 @@ const addOne = (num) => {
 var two = addOne(1);
 console.log(two);
 ```
+addOne' has already been declared
+
+![](./snip12.png)
+
 
 7. Make a Execution Context Diagram for the following JS and write the output.
 
@@ -84,6 +94,7 @@ const addOne = (num) => {
 var two = addOne(1);
 console.log(two);
 ```
+addOne' has already been declared
 
 8. What will be the output of the following
 
@@ -97,6 +108,8 @@ function isAwesome() {
 }
 isAwesome();
 ```
+
+undefined
 
 9. What will be the output of the following
 
@@ -123,6 +136,7 @@ function isAwesome() {
 }
 isAwesome();
 ```
+true
 
 11. What will be the output of the following
 
@@ -135,7 +149,7 @@ function fullName(a, b) {
   return a + b;
 }
 const name = fullName(firstName, lastName);
-console.log(name);
+console.log(name); // AryaStark
 ```
 
 12. Guess the output of the code below with a reason.
@@ -148,6 +162,9 @@ sayHello();
 
 console.log(name);
 ```
+undefined
+
+name is defined using the keyword let inside the function scope therefore we cannot access let from outside the block or function scope.
 
 13. Guess the output of the code below with a reason.
 
@@ -155,8 +172,9 @@ console.log(name);
 if (true) {
   var name = 'Arya Stark';
 }
-console.log(name);
+console.log(name); // Arya Stark
 ```
+name is defined a block scope but we can acess it from outside becuase it has been declared using the var keyword which is a function scope only.
 
 14. Guess the output of the code below with a reason.
 
@@ -164,8 +182,9 @@ console.log(name);
 if (true) {
   let name = 'Arya Stark';
 }
-console.log(name);
+console.log(name);  // undefined
 ```
+We cannot access the variable name from outside the block scope because it has been defined using the let keyword.
 
 15. Guess the output of the code below with a reason.
 
@@ -173,8 +192,9 @@ console.log(name);
 for (var i = 0; i < 20; i++) {
   //
 }
-console.log(i);
-```
+console.log(i); // 20
+``` 
+We can access i from outside the scope only because it has been defined using the var keyword.
 
 16. Guess the output of the code below with a reason.
 
@@ -182,8 +202,10 @@ console.log(i);
 for (let i = 0; i < 20; i++) {
   //
 }
-console.log(i);
+console.log(i); // ReferenceError - i is not defined
 ```
+
+We cannot access i from outside because i has been defined using the keyword let which is a block scope.
 
 17. Guess the output and the reason behind that.
 
@@ -194,8 +216,9 @@ function sample() {
   }
   console.log(username);
 }
-sample();
+sample(); // John Snow
 ```
+We can access username inside the block scope because it has been defined using the var keyword.
 
 18. Guess the output and the reason behind that.
 
@@ -206,8 +229,10 @@ function sample() {
   }
   console.log(username);
 }
-sample();
+sample(); // ReferenceError - username is not defined
 ```
+
+We cannot acces username inside the block scope because of the let keyword.
 
 19. Guess the output and the reason behind that.
 
@@ -220,8 +245,10 @@ function sample() {
   }
   console.log(username, 'second');
 }
-sample();
+sample(); // John Snow 
+// John Snow second
 ```
+We can access the username inside the block scope using the var keyword.
 
 20. Guess the output and the reason behind that.
 
@@ -234,8 +261,10 @@ function sample() {
   }
   console.log(username, 'second');
 }
-sample();
+sample(); // John Snow first
+// Arya Stark second
 ```
+We can access the username variable defined outside the block scope because the variable can bubble out for the value and then use it inside the scope however it is not possible the other way.
 
 21. Guess the output and the reason behind that.
 
@@ -248,7 +277,11 @@ function sample(...args) {
 }
 
 sample('First', 'Second', 'Third');
+// Hello I am First
+// Hello I am Second
+// Hello I am Third
 ```
+We can access message and args because they all are under the scope.
 
 22. Guess the output and the reason behind that.
 
@@ -261,7 +294,11 @@ function sample(...args) {
 }
 
 sample('First', 'Second', 'Third');
+// Hello I am First
+// Hello I am Second
+// Hello I am Third
 ```
+We can access message and args because they all are under the scope.
 
 23. Guess the output and the reason behind that.
 
@@ -274,7 +311,9 @@ if (true) {
   let username = 'Hello World!';
   myFunc();
 }
+// ReferenceError: Cannot access 'username' before initialization+
 ```
+We are tryiing to access the username which is defined inside a function scope.
 
 24. Guess the output and the reason behind that.
 
@@ -289,8 +328,9 @@ function outer() {
   inner();
 }
 
-outer();
+outer(); // I love this movie called MAD MAX: FURY ROAD
 ```
+We can bubble out of the scope for the variable movie.
 
 25. Guess the output and the reason behind that.
 
@@ -306,8 +346,10 @@ function outer() {
   inner();
 }
 
-outer();
-```
+outer(); // I love this movie called BEFORE SUNRISE
+``` 
+We can bubble out of the scope for the variable movie.
+
 
 26. Guess the output and the reason behind that.
 
@@ -321,12 +363,12 @@ function outer() {
       console.log(
         `I love this movie called ${movie.toUpperCase()}`
       );
-    }
+    } 
     extraInner();
   }
   inner();
 }
-outer();
+outer(); // I love this movie called GONE GIRL
 ```
 
 30. Using reduce find the final value when the initial value passed is `100`. You have to pass the output of one function into the input of next function in the array `allFunctions` starts with `addOne` ends with `half`.
