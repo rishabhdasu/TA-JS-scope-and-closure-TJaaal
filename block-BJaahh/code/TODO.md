@@ -29,7 +29,11 @@ const final = name('Smith'); // final should be "Will Smith"
 
 ```js
 function isInBetween(a, b) {
-  // your code goes here
+  return function(c) {
+  if(a > b) {
+  return c > b && c < a;
+ } else return c < b && c > a;
+}
 }
 
 const isChild = isInBetween(10, 100);
@@ -42,9 +46,10 @@ isChild(103); // false
 
 ```js
 function letsWishThem(greeting) {
-  // your code goes here
+ return function (message) {
+  return greeting + " " + message;
+ }
 }
-
 const callWithHey = letsWishThem('Hey');
 const callWithHello = letsWishThem('Hello');
 callWithHey('Arya'); // Hey Arya
@@ -54,8 +59,10 @@ callWithHello('How Are You?'); // Hello How Are You?
 5. Write a function called `addGame` which takes a string (name of the game) and the current score. It returns a function calling that will increment the score by one and print something like `Score of Basketball is 1`.
 
 ```js
-function addGame(gameName) {
-  // your code goes here
+function addGame(gameName, score) {
+ return function() {
+  return `Your score of ${gameName} is ${++score}`
+ }
 }
 
 // Output
@@ -71,7 +78,10 @@ cricket(); // Your score of Cricket is 2
 
 ```js
 function getCard(suit) {
-  // your code goes here
+  let items = [2,3,4,5,6,7,8,9,10,"J", "Q", "K", "A"];
+  return function() {
+  return `Card is : ${items[Math.floor(Math.random()*items.length)]} ${suit}`;
+ }
 }
 
 // Output
