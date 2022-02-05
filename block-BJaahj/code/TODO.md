@@ -61,8 +61,16 @@ To build the object, `objOfMatchesWithArray` will test each element of the first
 The final output from the third array will be matched agains the same indexed element of second array. If there is a match, the element from the first array becomes a key in an object, and the element from the second array becomes the corresponding value.
 
 ```js
-function objOfMatchesWithArray(array1, array2, callback) {}
-
+function objOfMatchesWithArray(array1, array2, callback) {
+ return array1.reduce((acc, cv, index) => {
+ let values = callback.reduce((acc, fn) => fn(acc), cv);
+ if(values === array2[index])
+ {
+  acc[cv] = array2[index];
+ }
+return acc;
+}, {})
+}
 // TEST
 console.log(
   objOfMatchesWithArray(
