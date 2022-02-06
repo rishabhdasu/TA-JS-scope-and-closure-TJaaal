@@ -2,7 +2,13 @@
 
 ```js
 function once(cb) {
-  // your code goes here
+  let done = false;
+ return function() {
+   if(!done) {
+   done = true;
+
+  }
+}
 }
 
 // TEST
