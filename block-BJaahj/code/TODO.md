@@ -100,8 +100,14 @@ To build the object, `objectWithArrayValues` will pass each value of the first a
 In the final object the key will be the value form the first array like `hi` and value will be an array of values returned from each function like `['HI', 'Hi', 'HiHi']`
 
 ```js
-function objOfMatchesWithArray(array1, array2, callback) {}
-
+function objOfMatchesWithArray(array1, callbacks) {
+ return array1.reduce((acc, cv) => {
+  let values = callbacks.map(fn => fn(cv));
+   acc[cv] = values;
+ 
+  return acc;
+}, {})
+}
 // TEST
 console.log(
   objOfMatchesWithArray(
