@@ -30,9 +30,21 @@ The returned function either accepts two parameter or one parameter.
 
 ```js
 function multipleCensor() {
-  //  Your code goes here
+ let words = [];
+ return function(...params) {
+ if(params.length === 1) {
+ let sentence = params[0];
+ words.forEach(pair => {
+ sentence = sentence.replace(pair[0], pair[1]);
+});
+return sentence;
+} else if(params.length === 2) {
+ words.push(params);
+} else {
+ alert(`Not more than 2 parameters are allowed`);
 }
-
+}
+}
 let censorQuote = multipleCensor();
 censorQuote('forget', 'remember'); // two parameter no return
 censorQuote('never', 'always'); // two parameter no return
