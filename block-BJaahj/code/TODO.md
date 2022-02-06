@@ -148,8 +148,13 @@ Create a function named `schedule` which accept two arguments an array of functi
 The function `schedule` will execute the function at first index after the value in value on first index in second array. i.e execute `sayHi` after `1` second and `sayHello` after `2` second.
 
 ```js
-function schedule() {}
-
+function schedule(callbacks, seconds) {
+ if(callbacks.length === seconds.length) {
+  callbacks.forEach((fn, i) => {
+  setTimeout(fn, seconds[i] * 1000);
+ });
+ } else { alert("Length is not same"); return;}
+}
 function sayHi() {
   console.log('Hi');
 }
